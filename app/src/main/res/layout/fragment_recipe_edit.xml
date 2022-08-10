@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context="ui.NewRecipeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/editRecipeImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_spacing"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/new_recipe_image_description"
+                android:maxHeight="@dimen/max_recipe_image_height"
+                android:minHeight="@dimen/min_recipe_image_height"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editRecipeAddRecipeImageMaterialButton"
+                style="@style/Widget.AppTheme.AddImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/recipe_add_recipe_image"
+                android:padding="@dimen/common_spacing"
+                app:iconTint="@color/grey_500"
+                app:layout_constraintEnd_toEndOf="@id/editRecipeImageView"
+                app:layout_constraintTop_toTopOf="@id/editRecipeImageView" />
+
+
+            <EditText
+                android:id="@+id/editRecipeNameEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/recipe_name"
+                android:padding="@dimen/common_spacing"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@id/editRecipeImageView"
+                app:layout_constraintStart_toStartOf="@id/editRecipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/editRecipeImageView" />
+
+            <TextView
+                android:id="@+id/editRecipeCategoriesWordTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/categories_word_text_description"
+                android:text="@string/categories_word"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/editRecipeImageView"
+                app:layout_constraintStart_toStartOf="@id/editRecipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/editRecipeNameEditText"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <ImageButton
+                android:id="@+id/addCategoryImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/add_category_button_text_description"
+                app:layout_constraintStart_toStartOf="@id/editRecipeCategoriesWordTextView"
+                app:layout_constraintTop_toBottomOf="@id/editRecipeCategoriesWordTextView"
+                app:srcCompat="@drawable/ic_add_recipe_bn_24dp"
+                app:tint="@color/black" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/editRecipeChipGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/common_spacing"
+                app:layout_constraintEnd_toEndOf="@id/editRecipeImageView"
+                app:layout_constraintStart_toStartOf="@id/addCategoryImageButton"
+                app:layout_constraintTop_toBottomOf="@id/addCategoryImageButton">
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:id="@+id/editRecipeStepsWordTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/new_recipe_steps_word_description"
+                android:text="@string/steps_word"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/editRecipeImageView"
+                app:layout_constraintStart_toStartOf="@id/editRecipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/editRecipeChipGroup"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/editRecipeStepsList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/editRecipeImageView"
+                app:layout_constraintStart_toStartOf="@id/editRecipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/editRecipeStepsWordTextView"
+                tools:listitem="@layout/step" />
+
+            <EditText
+                android:id="@+id/editRecipeStepsEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/recipe_step"
+                android:padding="@dimen/common_spacing"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@id/editRecipeAddImageStepImageButton"
+                app:layout_constraintStart_toStartOf="@id/editRecipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/editRecipeStepsList" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editRecipeAddImageStepImageButton"
+                style="@style/Widget.AppTheme.AddImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/new_recipe_add_step_image_description"
+                app:layout_constraintBottom_toBottomOf="@id/editRecipeStepsEditText"
+                app:layout_constraintEnd_toStartOf="@id/editRecipeAddStepImageButton"
+                app:layout_constraintTop_toTopOf="@id/editRecipeStepsEditText" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editRecipeAddStepImageButton"
+                style="@style/Widget.AppTheme.OkButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/common_spacing"
+                android:contentDescription="@string/new_recipe_add_step_description"
+                app:layout_constraintBottom_toBottomOf="@id/editRecipeStepsEditText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/editRecipeStepsEditText" />
+
+
+            <Button
+                android:id="@+id/editRecipeSaveButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_spacing"
+                android:contentDescription="@string/new_recipe_save_button_description"
+                android:padding="@dimen/common_spacing"
+                android:text="@string/save_recipe"
+                app:layout_constraintEnd_toEndOf="@id/editRecipeImageView"
+                app:layout_constraintStart_toStartOf="@id/editRecipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/editRecipeStepsEditText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>

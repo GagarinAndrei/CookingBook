@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/common_spacing">
+
+    <TextView
+        android:id="@+id/stepWordTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/step_word_text_description"
+        android:text="@string/step_word"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/stepNumberTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/step_number_text_description"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/stepWordTextView"
+        app:layout_constraintStart_toEndOf="@id/stepWordTextView"
+        app:layout_constraintTop_toTopOf="@id/stepWordTextView"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="1" />
+
+    <TextView
+        android:id="@+id/stepTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/step_text_description"
+        android:paddingTop="@dimen/common_spacing"
+        android:paddingBottom="@dimen/common_spacing"
+        app:layout_constraintEnd_toEndOf="@id/deleteStepMaterialButton"
+        app:layout_constraintStart_toStartOf="@id/stepWordTextView"
+        app:layout_constraintTop_toBottomOf="@id/stepWordTextView"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Закинуть пельмени в воду на 30 минут" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/deleteStepMaterialButton"
+        style="@style/Widget.AppTheme.DeleteStepButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/delete_step_text_description"
+        app:layout_constraintBottom_toBottomOf="@id/stepNumberTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/stepNumberTextView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/stepImageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/step_image_description"
+        android:maxHeight="@dimen/max_recipe_image_height"
+        android:minHeight="@dimen/min_recipe_image_height"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/deleteStepMaterialButton"
+        app:layout_constraintStart_toStartOf="@id/stepWordTextView"
+        app:layout_constraintTop_toBottomOf="@id/stepTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

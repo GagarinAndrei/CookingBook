@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_cancel_button"
+        android:icon="@drawable/ic_cancel_button_24dp"
+        android:title="@string/action_bar_cancel_button"
+        app:showAsAction="always" />
+
+    <item
+        android:title=""
+        app:actionLayout="@layout/empty_item"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_ok_button"
+        android:icon="@drawable/ic_ok_button_24dp"
+        android:title="@string/action_bar_ok_button"
+        app:showAsAction="always" />
+
+
+</menu>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recipesFeedFragment">
+
+    <fragment
+        android:id="@+id/recipesFeedFragment"
+        android:name="ru.netology.nerecipe.ui.RecipesFeedFragment"
+        android:label="RecipesFeedFragment">
+        <action
+            android:id="@+id/toRecipeFragment"
+            app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/toEditRecipeFragment"
+            app:destination="@id/editRecipeFragment" />
+        <action
+            android:id="@+id/toNewRecipeFragment"
+            app:destination="@id/newRecipeFragment" />
+        <action
+            android:id="@+id/toFaveRecipesFeedFragment"
+            app:destination="@id/faveRecipesFeedFragment" />
+        <action
+            android:id="@+id/toFiltersFragment"
+            app:destination="@id/filtersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editRecipeFragment"
+        android:name="ru.netology.nerecipe.ui.EditRecipeFragment" />
+    <fragment
+        android:id="@+id/newRecipeFragment"
+        android:name="ru.netology.nerecipe.ui.NewRecipeFragment" />
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="ru.netology.nerecipe.ui.RecipeFragment">
+        <action
+            android:id="@+id/toEditRecipeFragment"
+            app:destination="@id/editRecipeFragment" />
+        <argument
+            android:name="recipeId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/faveRecipesFeedFragment"
+        android:name="ru.netology.nerecipe.ui.FaveRecipesFeedFragment"
+        android:label="FaveRecipesFeedFragment">
+        <action
+            android:id="@+id/toEditRecipeFragment"
+            app:destination="@id/editRecipeFragment" />
+        <action
+            android:id="@+id/toRecipeFragment"
+            app:destination="@id/recipeFragment" />
+        <action
+            android:id="@+id/toNewRecipeFragment"
+            app:destination="@id/newRecipeFragment" />
+        <action
+            android:id="@+id/toRecipesFeedFragment"
+            app:destination="@id/recipesFeedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filtersFragment"
+        android:name="ru.netology.nerecipe.ui.FiltersFragment"
+        android:label="FiltersFragment" />
+</navigation>

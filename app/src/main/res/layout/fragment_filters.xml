@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/common_spacing"
+    tools:context=".ui.RecipesFeedFragment">
+
+    <TextView
+        android:id="@+id/filtersTitleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/common_spacing"
+        android:text="@string/category_filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resetFilterButton" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/filtersAllCategoryCheckBox"
+        style="@style/Widget.AppTheme.DeleteStepButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/common_spacing"
+        android:paddingEnd="@dimen/common_spacing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filtersTitleTextView" />
+
+
+    <TextView
+        android:id="@+id/filtersAllCategoryTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/common_spacing"
+        android:paddingEnd="@dimen/common_spacing"
+        android:text="@string/filter_all"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/filtersAllCategoryCheckBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/filtersAllCategoryCheckBox"
+        app:layout_constraintTop_toBottomOf="@id/filtersTitleTextView" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/filtersAllCategoryBarrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="filtersAllCategoryBarrier, filtersAllCategoryCheckBox" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/filtersRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/filtersTitleTextView"
+        app:layout_constraintStart_toEndOf="@id/filtersTitleTextView"
+        app:layout_constraintTop_toBottomOf="@id/filtersAllCategoryBarrier"
+        tools:listitem="@layout/filter" />
+
+    <Button
+        android:id="@+id/resetFilterButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/common_spacing"
+        android:text="@string/reset_filters_button"
+        app:layout_constraintEnd_toEndOf="@id/filtersTitleTextView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/filtersTitleTextView"
+        app:layout_constraintTop_toBottomOf="@id/filtersRecyclerView" />
+
+    <Button
+        android:id="@+id/applyFilterButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/common_spacing"
+        android:text="@string/apply_filters_button"
+        app:layout_constraintEnd_toEndOf="@id/filtersTitleTextView"
+        app:layout_constraintStart_toStartOf="@id/filtersTitleTextView"
+        app:layout_constraintTop_toBottomOf="@id/filtersRecyclerView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+

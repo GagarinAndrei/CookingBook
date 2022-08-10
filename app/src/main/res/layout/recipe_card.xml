@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/common_spacing">
+
+    <ImageView
+        android:id="@+id/recipeCardImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxHeight="200dp"
+        android:contentDescription="@string/recipe_card_image_text_description"
+        android:padding="@dimen/common_spacing"
+        android:scaleType="centerInside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_cook_book" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/faveRecipeCardMaterialButton"
+        style="@style/Widget.AppTheme.FavouriteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkable="true"
+        android:contentDescription="@string/favourite_button_recipe_description"
+        app:layout_constraintBottom_toTopOf="@id/titleRecipeCardTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <TextView
+        android:id="@+id/titleRecipeCardTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:ellipsize="end"
+        android:maxLines="5"
+        app:layout_constraintStart_toEndOf="@+id/recipeCardImageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recipeCardImageView"
+        tools:text="Каша из пельменей" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/recipeCardOptionsMaterialButton"
+        style="@style/Widget.AppTheme.OptionsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/options_text_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/categoriesWordTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/categories_word_text_description"
+        android:text="@string/categories_word"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrierBottomStep" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/categoriesWordTextView"
+        app:layout_constraintTop_toBottomOf="@id/categoriesWordTextView" />
+
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierBottomStep"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:barrierDirection="bottom"
+        app:barrierMargin="@dimen/common_spacing"
+        app:constraint_referenced_ids="recipeCardImageView, titleRecipeCardTextView, recipeCardOptionsMaterialButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/recipesFeedFragment"
+        android:icon="@drawable/ic_list_24dp"
+        android:title="@string/action_bar_all_recipes_button"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/faveRecipesFeedFragment"
+        android:icon="@drawable/ic_favorite_filled_24dp"
+        android:title="@string/action_bar_favorite_recipes_button"
+        app:showAsAction="always" />
+</menu>

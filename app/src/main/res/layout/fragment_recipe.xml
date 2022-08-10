@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    tools:context="ui.NewRecipeFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/recipeImageView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/common_spacing"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/recipe_image_description"
+                android:maxHeight="@dimen/max_recipe_image_height"
+                android:minHeight="@dimen/min_recipe_image_height"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/faveRecipeMaterialButton"
+                style="@style/Widget.AppTheme.FavouriteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:contentDescription="@string/favourite_button_recipe_description"
+                app:layout_constraintBottom_toBottomOf="@id/recipeImageView"
+                app:layout_constraintEnd_toEndOf="@id/recipeImageView" />
+
+
+            <TextView
+                android:id="@+id/recipeNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/recipe_name_text_description"
+                android:padding="@dimen/common_spacing"
+                android:textSize="@dimen/title_recipe_card_text_size"
+                app:layout_constraintEnd_toEndOf="@id/recipeImageView"
+                app:layout_constraintStart_toStartOf="@id/recipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/recipeImageView"
+                tools:text="Название какого-то рецепта" />
+
+            <TextView
+                android:id="@+id/recipeCategoriesWordTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/categories_word_text_description"
+                android:paddingStart="@dimen/common_spacing"
+                android:paddingEnd="@dimen/common_spacing"
+                android:text="@string/categories_word"
+                android:textSize="@dimen/text_size_head"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/recipeImageView"
+                app:layout_constraintStart_toStartOf="@id/recipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/recipeNameTextView"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/recipeChipGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/common_spacing"
+                android:paddingEnd="@dimen/common_spacing"
+                android:paddingBottom="@dimen/common_spacing"
+                app:layout_constraintEnd_toEndOf="@id/recipeImageView"
+                app:layout_constraintStart_toStartOf="@id/recipeCategoriesWordTextView"
+                app:layout_constraintTop_toBottomOf="@id/recipeCategoriesWordTextView" />
+
+
+            <TextView
+                android:id="@+id/recipeStepsWordTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/new_recipe_steps_word_description"
+                android:paddingStart="@dimen/common_spacing"
+                android:paddingEnd="@dimen/common_spacing"
+                android:text="@string/steps_word"
+                android:textSize="@dimen/text_size_head"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/recipeImageView"
+                app:layout_constraintStart_toStartOf="@id/recipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/recipeChipGroup"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recipeStepsList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/recipeImageView"
+                app:layout_constraintStart_toStartOf="@id/recipeImageView"
+                app:layout_constraintTop_toBottomOf="@id/recipeStepsWordTextView"
+                tools:listitem="@layout/step" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>
