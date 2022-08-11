@@ -25,7 +25,7 @@
                 android:contentDescription="@string/new_recipe_image_description"
                 android:maxHeight="@dimen/max_recipe_image_height"
                 android:minHeight="@dimen/min_recipe_image_height"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:visibility="visible"
                 app:layout_constraintTop_toTopOf="parent" />
 

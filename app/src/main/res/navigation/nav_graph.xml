@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/recipesFeedFragment"
-        android:name="ru.netology.nerecipe.ui.RecipesFeedFragment"
+        android:name="ru.gagarin.cookingbook.ui.RecipesFeedFragment"
         android:label="RecipesFeedFragment">
         <action
             android:id="@+id/toRecipeFragment"
@@ -26,13 +26,13 @@
     </fragment>
     <fragment
         android:id="@+id/editRecipeFragment"
-        android:name="ru.netology.nerecipe.ui.EditRecipeFragment" />
+        android:name="ru.gagarin.cookingbook.ui.EditRecipeFragment" />
     <fragment
         android:id="@+id/newRecipeFragment"
-        android:name="ru.netology.nerecipe.ui.NewRecipeFragment" />
+        android:name="ru.gagarin.cookingbook.ui.NewRecipeFragment" />
     <fragment
         android:id="@+id/recipeFragment"
-        android:name="ru.netology.nerecipe.ui.RecipeFragment">
+        android:name="ru.gagarin.cookingbook.ui.RecipeFragment">
         <action
             android:id="@+id/toEditRecipeFragment"
             app:destination="@id/editRecipeFragment" />
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/faveRecipesFeedFragment"
-        android:name="ru.netology.nerecipe.ui.FavouriteRecipesFeedFragment"
+        android:name="ru.gagarin.cookingbook.ui.FavouriteRecipesFeedFragment"
         android:label="FaveRecipesFeedFragment">
         <action
             android:id="@+id/toEditRecipeFragment"
@@ -59,6 +59,6 @@
     </fragment>
     <fragment
         android:id="@+id/filtersFragment"
-        android:name="ru.netology.nerecipe.ui.FiltersFragment"
+        android:name="ru.gagarin.cookingbook.ui.FiltersFragment"
         android:label="FiltersFragment" />
 </navigation>
