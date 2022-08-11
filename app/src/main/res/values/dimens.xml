@@ -6,8 +6,7 @@
     <dimen name="title_recipe_card_text_size">24sp</dimen>
     <dimen name="options_recipe_card_icon_size">32dp</dimen>
     <dimen name="fave_recipe_card_icon_size">32dp</dimen>
-    <dimen name="text_size">16sp</dimen>
     <dimen name="text_size_head">20sp</dimen>
-    <dimen name="min_recipe_image_height">80dp</dimen>
-    <dimen name="max_recipe_image_height">240dp</dimen>
+    <dimen name="min_recipe_image_height">112dp</dimen>
+    <dimen name="max_recipe_image_height">200dp</dimen>
 </resources>

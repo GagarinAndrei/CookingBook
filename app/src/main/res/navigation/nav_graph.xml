@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/faveRecipesFeedFragment"
-        android:name="ru.netology.nerecipe.ui.FaveRecipesFeedFragment"
+        android:name="ru.netology.nerecipe.ui.FavouriteRecipesFeedFragment"
         android:label="FaveRecipesFeedFragment">
         <action
             android:id="@+id/toEditRecipeFragment"

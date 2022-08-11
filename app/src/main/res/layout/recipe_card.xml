@@ -9,24 +9,24 @@
 
     <ImageView
         android:id="@+id/recipeCardImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxHeight="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:contentDescription="@string/recipe_card_image_text_description"
         android:padding="@dimen/common_spacing"
         android:scaleType="centerInside"
+        android:src="@drawable/placeholder_main"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ic_cook_book" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/faveRecipeCardMaterialButton"
         style="@style/Widget.AppTheme.FavouriteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:checkable="true"
         android:contentDescription="@string/favourite_button_recipe_description"
-        app:layout_constraintBottom_toTopOf="@id/titleRecipeCardTextView"
+        app:layout_constraintBottom_toTopOf="@id/barrierBottomStep"
         app:layout_constraintEnd_toEndOf="parent" />
 
 
@@ -78,7 +78,7 @@
         android:layout_height="0dp"
         app:barrierDirection="bottom"
         app:barrierMargin="@dimen/common_spacing"
-        app:constraint_referenced_ids="recipeCardImageView, titleRecipeCardTextView, recipeCardOptionsMaterialButton" />
+        app:constraint_referenced_ids="titleRecipeCardTextView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

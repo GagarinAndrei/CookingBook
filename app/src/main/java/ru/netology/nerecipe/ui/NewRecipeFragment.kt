@@ -65,7 +65,7 @@ class NewRecipeFragment : Fragment() {
                     Recipe(
                         id = 0,
                         title = "",
-                        recipeImgPath = DEFAULT_IMAGE,
+                        recipeImgPath = "",
                         steps = mutableMapOf(),
                         tags = mutableSetOf()
                     )
@@ -151,8 +151,8 @@ class NewRecipeFragment : Fragment() {
                 }
 
                 newRecipeSaveButton.setOnClickListener {
-                    if (recipeImgPath.isNullOrEmpty()) {
-                        recipeImgPath = "Какая-то дефолтная картинка"
+                    if (recipeImgPath.isEmpty()) {
+                        recipeImgPath = DEFAULT_IMAGE
                         currentNewRecipe.value =
                             currentNewRecipe.value?.copy(recipeImgPath = recipeImgPath)
                     }
@@ -198,7 +198,7 @@ class NewRecipeFragment : Fragment() {
 
     companion object {
         private const val DEFAULT_IMAGE =
-            "android.resource://ru.netology.nerecipe/drawable/placeholder_main"
+            "android.resource://ru.gagarin.cookingbook/drawable/placeholder_main"
         const val CALLER_NEW_RECIPE = "Caller: newRecipe"
     }
 }

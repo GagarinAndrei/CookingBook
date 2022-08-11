@@ -69,7 +69,7 @@ class RecipesAdapter(
 
         init {
             binding.faveRecipeCardMaterialButton.setOnClickListener {
-                interactionListener.onFaveButtonClicked(
+                interactionListener.onFavouriteButtonClicked(
                     recipe
                 )
             }

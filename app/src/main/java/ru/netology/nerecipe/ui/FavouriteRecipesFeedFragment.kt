@@ -7,12 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import ru.netology.nerecipe.R
 import ru.netology.nerecipe.adapters.recipe.RecipesAdapter
 import ru.netology.nerecipe.databinding.FragmentRecipesFeedFavoritesBinding
 import ru.netology.nerecipe.viewModel.RecipeViewModel
 
-class FaveRecipesFeedFragment : Fragment() {
+class FavouriteRecipesFeedFragment : Fragment() {
 
     private val Fragment.packageManager
         get() = activity?.packageManager
@@ -23,22 +22,22 @@ class FaveRecipesFeedFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         viewModel.navigateToEditRecipeScreenEvent.observe(this) {
-            val direction = FaveRecipesFeedFragmentDirections.toEditRecipeFragment()
+            val direction = FavouriteRecipesFeedFragmentDirections.toEditRecipeFragment()
             findNavController().navigate(direction)
         }
 
         viewModel.navigateToNewRecipeScreenEvent.observe(this) {
-            val direction = FaveRecipesFeedFragmentDirections.toNewRecipeFragment()
+            val direction = FavouriteRecipesFeedFragmentDirections.toNewRecipeFragment()
             findNavController().navigate(direction)
         }
 
         viewModel.navigateToRecipeScreenEvent.observe(this) { recipe ->
-            val direction = FaveRecipesFeedFragmentDirections.toRecipeFragment(recipe.id)
+            val direction = FavouriteRecipesFeedFragmentDirections.toRecipeFragment(recipe.id)
             findNavController().navigate(direction)
         }
 
         viewModel.navigateToAllRecipesScreenEvent.observe(this) {
-            val direction = FaveRecipesFeedFragmentDirections.toRecipesFeedFragment()
+            val direction = FavouriteRecipesFeedFragmentDirections.toRecipesFeedFragment()
             findNavController().navigate(direction)
         }
     }
@@ -60,21 +59,16 @@ class FaveRecipesFeedFragment : Fragment() {
                 binding.faveRecipesRecyclerView.adapter = recipeAdapter
 
                 viewModel.data.observe(viewLifecycleOwner) { recipes ->
-                    val faveRecipes = recipes.filter { recipe -> recipe.isFavourite }
-                    if (faveRecipes.isNullOrEmpty()) {
+                    val favouriteRecipes = recipes.filter { recipe -> recipe.isFavourite }
+                    if (favouriteRecipes.isEmpty()) {
                         binding.faveRecipeFeedPlaceholderNotFound.visibility = View.VISIBLE
                     } else {
                         binding.faveRecipeFeedPlaceholderNotFound.visibility = View.GONE
                     }
 
-                    recipeAdapter.submitList(faveRecipes)
+                    recipeAdapter.submitList(favouriteRecipes)
                 }
 
             }.root
     }
-
-    companion object {
-        const val CALLER_FEED = "Caller: feed"
-    }
-
 }

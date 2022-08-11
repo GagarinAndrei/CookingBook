@@ -77,7 +77,7 @@ class RecipeFragment : Fragment() {
                 setTag(recipeChipGroup.context, recipe.tags, binding)
 
                 faveRecipeMaterialButton.setOnClickListener {
-                    viewModel.onFaveButtonClicked(recipe)
+                    viewModel.onFavouriteButtonClicked(recipe)
                 }
 
             }

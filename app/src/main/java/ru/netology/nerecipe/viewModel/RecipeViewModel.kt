@@ -93,7 +93,7 @@ class RecipeViewModel(application: Application) :
     }
 
 
-    override fun onFaveButtonClicked(recipe: Recipe) {
+    override fun onFavouriteButtonClicked(recipe: Recipe) {
         repository.favourite(recipe.id)
     }
 

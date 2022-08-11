@@ -4,7 +4,7 @@ import ru.netology.nerecipe.dto.Recipe
 
 interface RecipeInteractionListener {
 
-    fun onFaveButtonClicked(recipe: Recipe)
+    fun onFavouriteButtonClicked(recipe: Recipe)
 
     fun onDeleteMenuOptionClicked(recipeId: Long)
 
