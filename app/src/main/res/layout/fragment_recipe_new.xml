@@ -33,11 +33,12 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/newRecipeAddRecipeImageMaterialButton"
                 style="@style/Widget.AppTheme.AddImageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
                 android:contentDescription="@string/recipe_add_recipe_image"
                 android:padding="@dimen/common_spacing"
                 app:iconTint="@color/grey_500"
+                app:layout_constraintBottom_toBottomOf="@id/newRecipeImageView"
                 app:layout_constraintEnd_toEndOf="@id/newRecipeImageView"
                 app:layout_constraintTop_toTopOf="@id/newRecipeImageView" />
 
